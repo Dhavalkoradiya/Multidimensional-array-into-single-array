@@ -7,10 +7,10 @@
  */
 
 // Define function
-function single_array($array){
+function multi_to_single($array){
 	foreach($array as $key){
 		if(is_array($key)){
-			$array1 = single_array($key);
+			$array1 = multi_to_single($key);
 			foreach($array1 as $k){
 				$new_array[]=$k;
 			}
@@ -23,5 +23,5 @@ function single_array($array){
 }
 
 //calling function
-$single_array = single_array($multi_array);
+$single_array = multi_to_single($multi_array);
 ?>
